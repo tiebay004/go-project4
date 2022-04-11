@@ -1,0 +1,19 @@
+version: '3.9'
+
+networks:
+  web_network:
+    name: gonetwork4
+    driver: bridge
+
+services:
+  go-service4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: go-service-server4
+    container_name: go-service-server4
+    restart: always
+    ports:
+      - "8889:8889"
+    networks:
+      - web_network
