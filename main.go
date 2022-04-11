@@ -1,13 +1,9 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import getmyroute "go-project4/get_my_route"
 
 func main() {
-	app := fiber.New()
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello , Project 4 With Jenkins")
-	})
-	app.Listen(":8889")
+	getmyroute.Server()
 	println("test")
 }

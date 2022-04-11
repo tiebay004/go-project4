@@ -10,7 +10,8 @@ RUN go mod download
 
 # Copy the source code. Note the slash at the end, as explained in
 # https://docs.docker.com/engine/reference/builder/#copy
-COPY *.go ./
+COPY *.* ./
+COPY ./get_my_route ./get_my_route
 
 # Build
 RUN go build -o /docker-go-app
